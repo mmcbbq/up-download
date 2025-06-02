@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-phpinfo()
+
 
 ?>
 Hallo Welt
