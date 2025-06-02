@@ -8,11 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-
-
-?>
 Hallo Welt
-
+<br><br><br>
+<a href='data.php'>Files</a>
 </body>
 </html>

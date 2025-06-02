@@ -1,5 +1,26 @@
 <?php
 
+
+
+//    header(header:'Location: data.php?wrong=true',response_code: 301);
+//    die();
+
+if ($_SERVER['REQUEST_METHOD']==="POST"){
+if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === '') {
+    $_GET['wrong'] = true;
+}
+    $dir = 'data/';
+    $file = $dir .basename($_FILES['file']['name']);
+//$uploadOk = 1;
+//$filetype = strtolower(pathinfo($file,PATHINFO_EXTENSION));
+    move_uploaded_file($_FILES["file"]["tmp_name"], $file);
+    $_GET['upload'] = true;
+
+}
+
+
+
+
 ?>
 
 
