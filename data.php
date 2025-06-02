@@ -81,7 +81,7 @@ if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === '') {
     <h1>Upload</h1>
 <div>
 
-    <form action='upload.php' method='POST' enctype='multipart/form-data'>
+    <form  method='POST' enctype='multipart/form-data'>
         <input type='file' name='file' id='file'><br><br>
         Passwort    <input type='password' name='password' id='password'><br><br>
         <input type='submit' value='upload' name='submit'>
