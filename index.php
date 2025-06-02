@@ -8,34 +8,8 @@
     <title>Document</title>
 </head>
 <body>
-<div>
-<?php
-$upload = $_GET['upload'] ?? false;
-$pw = $_GET['wrong'] ?? false;
-$dir = opendir('./data');
-while (false !== ($file = readdir($dir))){
-    if ($file != '.' and $file != '..'){
-    echo "<a href='data/$file' download='$file'>$file</a><br>";
-    }
-}
-if ($pw){
-    echo "<div style='color: red' >Falsches PW</div>";
-}
-if ($upload){
-    echo "<div style='color: red'> Upload OK</div>";
-}
-?>
-</div>
 
-<div>
-
-<form action='upload.php' method='post' enctype='multipart/form-data'>
-    <input type='file' name='file' id='file'><br>
-    <input type='password' name='password' id='password'><br>
-    <input type='submit' value='upload' name='submit'>
-</form>
-</div>
+Hallo Welt
 
 </body>
 </html>
-
