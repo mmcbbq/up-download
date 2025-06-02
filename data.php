@@ -1,3 +1,8 @@
+<?php
+
+?>
+
+
 <!doctype html>
 <html lang='en'>
 <head>
@@ -6,16 +11,29 @@
           content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Document</title>
+    <style>
+
+        .element {
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+    </style>
 </head>
 <body style='background-color: #FB8F67'>
-<div style='background-color: #FFC2B4'>
+<div class='element' style='background-color: #FFC2B4;'>
     <h1>Files</h1>
     <?php
     $upload = $_GET['upload'] ?? false;
     $pw = $_GET['wrong'] ?? false;
     $dir = opendir('./data');
     $count = 0;
-    echo '<div style="width: 50%; border: rosybrown; border-style: solid ">';
+    echo '<div class="element">';
 
     while (false !== ($file = readdir($dir))) {
         if ($count % 2 == 0) {
@@ -25,8 +43,8 @@
         }
         $count++;
         if ($file != '.' and $file != '..') {
-            echo "<div style='background-color: $color'>";
-            echo "<a href='data/$file' download='$file' style='color: inherit; text-decoration: inherit' ><div>$file</div></a><br>";
+            echo "<div   style='background-color: $color; padding: 5px'>";
+            echo "<a href='data/$file' download='$file' style='color: inherit; text-decoration: inherit' >$file</a><br>";
             echo "</div>";
         }
     }
@@ -38,13 +56,13 @@
 <br>
 <br>
 <br>
-<div style='background-color: #F8E16C'>
+<div class='element' style='background-color: #F8E16C'>
     <h1>Upload</h1>
 <div>
 
-    <form action='upload.php' method='post' enctype='multipart/form-data'>
-        <input type='file' name='file' id='file'><br>
-        Passwort    <input type='password' name='password' id='password'><br>
+    <form action='upload.php' method='POST' enctype='multipart/form-data'>
+        <input type='file' name='file' id='file'><br><br>
+        Passwort    <input type='password' name='password' id='password'><br><br>
         <input type='submit' value='upload' name='submit'>
     </form>
 </div>
@@ -55,13 +73,8 @@ if ($pw) {
 if ($upload) {
     echo "<div style='color: red'> Upload OK</div>";
 }
-if ($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-    echo "post";
-}
 ?>
-
-
 
 <br>
 
