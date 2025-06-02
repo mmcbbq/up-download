@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+phpinfo()
 
+?>
 Hallo Welt
 
 </body>

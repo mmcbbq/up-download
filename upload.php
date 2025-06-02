@@ -1,9 +1,9 @@
 <?php
-var_dump($_FILES);
-if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === ''){
-    header(header:'Location: data.php?wrong=true',response_code: 301);
-    die();
-}
+//var_dump($_FILES);
+//if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === ''){
+//    header(header:'Location: data.php?wrong=true',response_code: 301);
+//    die();
+//}
 $dir = 'data/';
 $file = $dir .basename($_FILES['file']['name']);
 //$uploadOk = 1;
