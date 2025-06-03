@@ -63,14 +63,19 @@ if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === '') {
         $count++;
         if ($file != '.' and $file != '..') {
             echo "<div   style='background-color: $color; padding: 5px'>";
-            echo "<a href='data/$file' download='$file' style='color: inherit; text-decoration: inherit' >$file</a><br>";
+            echo "<a href='data/$file' download='$file' style='color: inherit; text-decoration: inherit' >$file</a>";
+            echo "<button onclick='location.href=\"delete.php?filename=$file\"' type='button' style='margin: 10px 10px ' >delete</button>";
             echo "</div>";
         }
     }
 
     echo '</div> <br>';
-
+    if (isset($_GET['delete'])){
+        echo "<div style='color: red'>File deleted</div>";
+    }
     ?>
+
+
 </div>
 <br>
 <br>

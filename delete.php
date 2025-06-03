@@ -1,10 +1,11 @@
 <?php
-//$file = $_GET['filename'];
+var_dump($_GET);
+$file = $_GET['filename'];
 
-$file = 'Hallo.txt';
+//$file = 'Hallo.txt';
 if(file_exists("data/$file")){
     unlink("data/$file");
-    header();
+    header(header:'Location: data.php?delete=true',response_code: 301);
 }else{
-    echo 'ist nicht da';
+    echo 'Error';
 }
