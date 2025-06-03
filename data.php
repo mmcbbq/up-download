@@ -1,7 +1,5 @@
 <?php
 
-
-
 //    header(header:'Location: data.php?wrong=true',response_code: 301);
 //    die();
 
@@ -62,8 +60,11 @@ if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === '') {
         }
         $count++;
         if ($file != '.' and $file != '..') {
+            $time = stat("data/$file")['mtime'];
+            $date = date('d-m-Y',$time);
             echo "<div   style='background-color: $color; padding: 5px'>";
             echo "<a href='data/$file' download='$file' style='color: inherit; text-decoration: inherit' >$file</a>";
+            echo "<span style='margin: 5px 5px'>$date;</span>";
             echo "<button onclick='location.href=\"delete.php?filename=$file\"' type='button' style='margin: 10px 10px ' >delete</button>";
             echo "</div>";
         }
