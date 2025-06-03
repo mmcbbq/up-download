@@ -19,10 +19,6 @@ if ($_POST['password']!== 'hds' or $_FILES['file']['name'] === '') {
 
 
 }
-
-
-
-
 ?>
 
 
@@ -104,4 +100,3 @@ if ($upload) {
 </div>
 </body>
 </html>
-
